@@ -1,5 +1,5 @@
 # 7370assignment2
-#### 1. Establish a baseline performance. How well did your Deep Q-learning do on your problem? (5 Points) (Links to an external site.)
+#### 1. Establish a baseline performance. How well did your Deep Q-learning do on your problem? (5 Points) 
 For example
 
 total_episodes = 5000
@@ -13,54 +13,45 @@ min_epsilon = 0.01
 decay_rate = 0.01 With this baseline performance, our RL program with the Taxi-v2 Toy text gives us a score of 8.13 which is considerably not bad.
 
 #### 2. What are the states, the actions, and the size of the Q-table? (5 Points)
- (Links to an external site.)
+
   actions :['NOOP', 'FIRE', 'RIGHT', 'LEFT', 'RIGHTFIRE', 'LEFTFIRE']
   states : the image of screen, which is an array of shape (210, 160, 3) 
-  size of q table 210*160*3*6
+  size of q table: 210*160*3*6
 
 #### 3. What are the rewards? Why did you choose them? (5 Points)
- (Links to an external site.)
+
  the change in the game score is the rewards, 
  score is a delayed response from the envirenment when the player choose an actions.
  
 
 #### 4. How did you choose alpha and gamma in the Bellman equation? Try at least one additional value for alpha and gamma. How did it change the baseline performance?  (5 Points)
- (Links to an external site.)
-
  if gamma<1, then Gt(return G at time stamp t) will have a finite value. If gamma=0, the Agent is only interested in the immediate reward and discards the long-term return. Conversely, if gamma=1, the Agent will consider all future rewards equal to the immediate reward.
 The learning rate alpha determines the behavior of the algorithm Sarsa. Too large values alpha will keep our algorithm far from convergence to optimal policy. If alpha=1 then Q(s_t, a_t) ← Gt, i.e. Q-value always will be most recent return, no any learning. The too small values alpha lead to learning too slow. If alpha=0 then Q(s_t, a_t) ← Q(s_t, a_t), never updated
 
 #### 5. Try a policy other than e-greedy. How did it change the baseline performance? (5 Points)
- (Links to an external site.)
- Boltzamann policy: mean reward declined 62% and mean steps didn't change. Also from the training table in the data, The mean reward fluctuates greatly, reaching a maximum of 0.18 and a minimum of 0.07. but for the e-greedy, mean reward only fluctuates between 0.27 and 0.33, with very little variation.
+Boltzamann policy: mean reward declined 62% and mean steps didn't change. Also from the training table in the data, The mean reward fluctuates greatly, reaching a maximum of 0.18 and a minimum of 0.07. but for the e-greedy, mean reward only fluctuates between 0.27 and 0.33, with very little variation.
 
 #### 6. How did you choose your decay rate and starting epsilon? Try at least one additional value for epsilon and the decay rate. How did it change the baseline performance? What is the value of epsilon when if you reach the max steps per episode? (5 Points)
- (Links to an external site.)
- 
+ when I decrease the starting epsilon to 0.7 and increase the decay rate to 0.3, the performance of q-learning  decrease 33%.  
 
 #### 7. What is the average number of steps taken per episode? (5 Points)
- (Links to an external site.)
+ for the baseline , the average number of steps are 768.28 per episode. 
  
-#### 8. Does Q-learning use value-based or policy-based iteration? (5 Points)
- (Links to an external site.)
-Explain, not a yes or no question. 
+#### 8. Does Q-learning use value-based or policy-based iteration? (5 Points) Explain, not a yes or no question. 
 Q-learning use value-based iteration; policy is deterministically computed from the q function by maximizing the reward;
 
 
-#### 9. Could you use SARSA for this problem? (5 Points)
-Explain, not a yes or no question. 
+#### 9. Could you use SARSA for this problem? (5 Points) Explain, not a yes or no question. 
 yes, SARSA and q learning have similar principles. 
  
 
-#### 10. What is meant by the expected lifetime value in the Bellman equation?
-(5 Points)
-Explain, not a yes or no question. 
-
- 
+#### 10. What is meant by the expected lifetime value in the Bellman equation?(5 Points) Explain, not a yes or no question. 
+The decision a is made at moment t and the reward r is obtained, at which point the total value expectation v(t) consists of the expectation r at this moment and the total expectation v(t+1) at the next step. expected lifetime value meant the total expectation at next step, which is the part of the later v(t+1)
+ bellman equation 
 
 #### 11. When would SARSA likely do better than Q-learning? (5 Points)
 Explain, not a yes or no question. 
-
+Sarsa is not as effective as Q-learning in learning, but it converges quickly and is intuitive and simple. so when the test episodes are small, SARSA have better performance than q-learning.
  
 
 #### 12. How does SARSA differ from Q-learning? (5 Points)  
