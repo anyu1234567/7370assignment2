@@ -1,5 +1,6 @@
 
 # 7370assignment2
+Please see data.xlsx for detailed data
 #### 1. Establish a baseline performance. How well did your Deep Q-learning do on your problem? (5 Points) 
 For example
 
@@ -113,3 +114,5 @@ yse
  
 
 #### 18. Professionalism (10 Points)Variable naming, style guide, conduct, behavior, and attitude.
+
+
