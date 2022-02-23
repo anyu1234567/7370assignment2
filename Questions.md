@@ -106,10 +106,10 @@ adapted the parameter of q learning
 
 #### 16. Did I explain my code clearly? (10 Points)Your code review score will be scaled to a range of 0 to 10 and be used for this score.
 
- 
+ yes
 
 #### 17. Did I explain my licensing clearly? (5 Points)Failure to cite a clear license will result in a zero for this section.
-
+yse
  
 
 #### 18. Professionalism (10 Points)Variable naming, style guide, conduct, behavior, and attitude.
